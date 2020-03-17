@@ -1,0 +1,10 @@
+<launch>
+    <param name="robot_description" command="xacro --inorder '$(find staubli_description)/urdf/tx60l.xacro'" />
+
+    <!--发布关节状态-->
+    <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+    <!--发布TF-->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find staubli_description)/config/staubli_model.rviz" required="true" />
+</launch>
