@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- load the joint state controller -->
+  <rosparam file="$(find staubli_gazebo)/config/joint_state_controller.yaml" command="load" />
+  <node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" args="joint_state_controller" />
+
+  <!-- load the arm controller -->
+  <rosparam file="$(find staubli_gazebo)/config/joint_position_control.yaml" command="load" />
+  <node name="joint_position_controller_spawner" pkg="controller_manager" type="spawner" args="joint1_position_controller
+                                                                                              joint2_position_controller
+                                                                                              joint3_position_controller
+                                                                                              joint4_position_controller
+                                                                                              joint5_position_controller
+                                                                                              joint6_position_controller" />
+</launch>

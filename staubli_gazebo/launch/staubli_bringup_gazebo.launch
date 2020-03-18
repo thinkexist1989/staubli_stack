@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find staubli_gazebo)/launch/staubli_world.launch" />
+
+    <include file="$(find staubli_gazebo)/launch/gazebo_states_tx60l.launch" />
+
+    <include file="$(find staubli_gazebo)/launch/trajectory_control_tx60l.launch" />
+
+    <include file="$(find staubli_moveit_config)/launch/moveit_gazebo.launch"/> 
+</launch>

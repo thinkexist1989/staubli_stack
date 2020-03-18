@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+    <!--加载Staubli TX60L URDF模型-->
+    <param name="robot_description" command="xacro --inorder '$(find staubli_description)/urdf/tx60l.xacro'" />
+</launch>

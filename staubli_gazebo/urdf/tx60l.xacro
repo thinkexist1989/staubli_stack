@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<robot name="staubli_tx60l" xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <!--定义prefix属性-->
+  <xacro:property name="prefix" value="" />
+
+  <!--包含tx60l_macro.xacro文件-->
+  <xacro:include filename="$(find staubli_description)/urdf/tx60l_macro.xacro" />
+  <!--包含tx60l_gazebo.xacro文件-->
+  <xacro:include filename="$(find staubli_gazebo)/urdf/tx60l_gazebo.xacro" />
+  <!--Staubli_tx60l定义-->
+  <xacro:staubli_tx60l prefix="${prefix}" />
+  <!--Staubli_tx60l Gazebo相关属性-->
+  <xacro:staubli_tx60l_gazebo prefix="${prefix}" />
+
+  <!-- Fix robot to Gazebo world -->
+  <link name="${prefix}world"/>
+  <joint name="world-base_link-fixed" type="fixed">
+    <parent link="world"/>
+    <child link="${prefix}base_link"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+
+</robot>
