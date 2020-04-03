@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: staubli_tx60_support
+    relative_path: urdf/tx60l.xacro
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/staubli_tx60l.srdf
+  CONFIG:
+    author_name: Yang Luo
+    author_email: luoyang@sia.cn
+    generated_timestamp: 1585906472
