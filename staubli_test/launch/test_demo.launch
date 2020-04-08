@@ -3,12 +3,11 @@
 <!--Staubli TX60L IP Address-->
 <arg name="robot_ip" default="192.168.0.254"/>
 
-<include file="$(find staubli_tx60_support)/launch/load_tx60l.launch"/>
-
-<include file="$(find staubli_val3_driver)/launch/robot_interface_streaming.launch">
+<include file="$(find staubli_test)/launch/tx60l_bringup.launch">
   <arg name="robot_ip" value="$(arg robot_ip)"/>
 </include>
 
+<!-- <param name="move_group/trajectory_execution/execution_duration_monitoring" value="false" /> -->
 <include file="$(find staubli_test)/launch/moveit_test.launch"/>
 
 </launch>
